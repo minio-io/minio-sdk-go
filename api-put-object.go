@@ -184,7 +184,7 @@ func (opts PutObjectOptions) Header() (header http.Header) {
 	}
 
 	if !opts.RetainUntilDate.IsZero() {
-		header.Set("X-Amz-Object-Lock-Retain-Until-Date", opts.RetainUntilDate.Format(time.RFC3339))
+		header.Set(amzLockRetainUntil, opts.RetainUntilDate.Format(iso8601TimeFormat))
 	}
 
 	if opts.LegalHold != "" {

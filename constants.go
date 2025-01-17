@@ -57,6 +57,7 @@ const totalWorkers = 4
 const (
 	signV4Algorithm   = "AWS4-HMAC-SHA256"
 	iso8601DateFormat = "20060102T150405Z"
+	iso8601TimeFormat = "2006-01-02T15:04:05.000Z"
 )
 
 const (

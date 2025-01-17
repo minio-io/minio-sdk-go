@@ -109,7 +109,7 @@ func (opts CopyDestOptions) Marshal(header http.Header) {
 
 	if opts.Mode != RetentionMode("") && !opts.RetainUntilDate.IsZero() {
 		header.Set(amzLockMode, opts.Mode.String())
-		header.Set(amzLockRetainUntil, opts.RetainUntilDate.Format(time.RFC3339))
+		header.Set(amzLockRetainUntil, opts.RetainUntilDate.Format(iso8601TimeFormat))
 	}
 
 	if opts.Encryption != nil {
